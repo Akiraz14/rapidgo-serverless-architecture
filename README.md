@@ -1,198 +1,189 @@
 # RapidGo — Serverless Backend Architecture on Azure
 
-> Proyecto académico — Tecnológico de Antioquia (TdeA)
-> Asignatura: Computación en la Nube — 2026-1
+Arquitectura cloud nativa para una plataforma de delivery de alta demanda, diseñada para escalar automáticamente, optimizar costos y garantizar disponibilidad en tiempo real.
 
 ---
 
-## 📌 1. Introducción
+## Visión General
 
-Este proyecto consiste en el **análisis, diseño e implementación de una arquitectura serverless en Microsoft Azure** para la empresa ficticia **RapidGo**, una startup colombiana de domicilios.
+RapidGo es una plataforma de domicilios que conecta clientes, comercios y repartidores a través de una aplicación móvil.
+El crecimiento acelerado del negocio ha evidenciado limitaciones en su backend monolítico actual, particularmente en:
 
-El objetivo principal es **resolver problemas reales de escalabilidad, disponibilidad y costos** mediante el uso de servicios cloud nativos, aplicando buenas prácticas de arquitectura como:
+* Escalabilidad durante picos de demanda
+* Costos operativos elevados por infraestructura dedicada
+* Despliegues con interrupciones
+* Baja confiabilidad en notificaciones
 
-* Modelo C4 para documentación
-* ADRs (Architectural Decision Records)
-* Enfoque serverless (pago por uso)
-* Desacoplamiento de componentes
-
-La solución propuesta busca reemplazar un backend monolítico con una arquitectura moderna basada en servicios gestionados de Azure.
-
----
-
-## 🎯 2. Objetivos del Proyecto
-
-### Objetivo General
-
-Diseñar e implementar un backend serverless escalable en Azure que soporte la operación de RapidGo.
-
-### Objetivos Específicos
-
-* Modelar la arquitectura usando el enfoque C4 (C1, C2, C3)
-* Documentar decisiones arquitectónicas mediante ADRs
-* Implementar un flujo funcional de pedidos
-* Garantizar alineación con requerimientos del negocio
-* Aplicar principios de arquitectura cloud moderna
+Este proyecto propone una **arquitectura serverless en Microsoft Azure**, orientada a resolver estos problemas mediante un enfoque desacoplado, escalable y basado en eventos.
 
 ---
 
-## 🏢 3. Contexto del Problema
+## Objetivos Arquitectónicos
 
-RapidGo es una plataforma de domicilios que presenta múltiples problemas en su arquitectura actual:
-
-* Baja escalabilidad en horas pico
-* Alto costo de infraestructura fija
-* Caídas durante despliegues
-* Notificaciones poco confiables
-* Falta de tolerancia a fallos
-
-Esto impacta directamente en sus ingresos y experiencia de usuario.
-
-La solución propuesta utiliza **Azure Serverless** para:
-
-* Escalar automáticamente
-* Reducir costos operativos
-* Mejorar la disponibilidad
-* Implementar notificaciones en tiempo real
+* Escalabilidad automática sin intervención manual
+* Alta disponibilidad (≥ 99.9%)
+* Reducción de costos mediante modelo pay-per-use
+* Despliegues sin downtime
+* Entrega confiable de notificaciones en tiempo real
+* Minimización de carga operativa
 
 ---
 
-## 🧠 4. Modelo C4
+## Modelo C4
 
-### 4.1 C1 — Diagrama de Contexto
+### C1 — Contexto
 
-Describe el sistema como una caja negra, mostrando actores y sistemas externos.
+El sistema RapidGo Backend actúa como núcleo de procesamiento, interactuando con usuarios del sistema (clientes, repartidores, administradores) a través de la aplicación móvil, e integrándose con servicios externos como pasarelas de pago y plataformas de notificación.
 
-*(Insertar imagen en `/assets/c1-context.jpg`)*
-
-Descripción:
-El sistema RapidGo interactúa con clientes, repartidores y administradores a través de una aplicación móvil, integrándose con servicios externos como pasarelas de pago y sistemas de notificación.
+![C1 Context](./assets/c1-context.jpg)
 
 ---
 
-### 4.2 C2 — Diagrama de Contenedores
+### C2 — Contenedores
 
-Describe los principales servicios que componen la arquitectura.
+La arquitectura está compuesta por servicios gestionados de Azure que desacoplan responsabilidades:
 
-*(Insertar imagen en `/assets/c2-containers.jpg`)*
-
-Contenedores principales:
-
-* **API Management** → Gateway de entrada
-* **Azure Functions** → Lógica de negocio
-* **Cosmos DB** → Persistencia
+* **API Management** → Gateway de entrada (seguridad, control de tráfico)
+* **Azure Functions** → Lógica de negocio serverless
+* **Cosmos DB** → Persistencia NoSQL escalable
 * **Blob Storage** → Almacenamiento de archivos
 * **Notification Hubs** → Notificaciones push
 
+![C2 Containers](./assets/c2-containers.jpg)
+
 ---
 
-### 4.3 C3 — Diagrama de Componentes
+### C3 — Componentes
 
-Describe la estructura interna de Azure Functions.
-
-*(Insertar imagen en `/assets/c3-components.jpg`)*
-
-Componentes principales:
+El contenedor Azure Functions se descompone en funciones especializadas que gestionan el flujo de pedidos:
 
 * `registrarPedido`
 * `actualizarEstado`
 * `consultarHistorial`
 * `notificarCliente`
 
----
+Soportadas por componentes de infraestructura:
 
-## 🧾 5. Decisiones Arquitectónicas (ADRs)
+* `PedidoRepository`
+* `BlobStorageService`
+* `NotificationService`
 
-Se documentan las decisiones clave tomadas durante el diseño del sistema.
-
-### ADR-01 — Uso de Azure Functions vs App Service
-
-*(Pendiente)*
-
-### ADR-02 — Uso de Cosmos DB vs Azure SQL
-
-*(Pendiente)*
-
-### ADR-03 — Uso de API Management vs exposición directa
-
-*(Pendiente)*
-
-### ADR-04 — Uso de Blob Storage vs Azure Files
-
-*(Pendiente)*
-
-### ADR-05 — Uso de Notification Hubs vs Azure Communication Services
-
-*(Pendiente)*
+![C3 Components](./assets/c3-components.jpg)
 
 ---
 
-## 🔄 6. Implementación del Flujo Crítico
+## Decisiones Arquitectónicas
 
-Se implementa el flujo principal del sistema:
+Las decisiones clave fueron documentadas mediante ADRs (Architectural Decision Records), permitiendo trazabilidad, justificación técnica y evolución controlada de la arquitectura.
 
-1. Cliente realiza un pedido (POST /pedidos)
-2. Azure Functions procesa la solicitud
-3. Se almacena el pedido en Cosmos DB
-4. Se actualiza el estado del pedido
-5. Se envía notificación al cliente
+Cada ADR documenta:
+- Contexto
+- Alternativas evaluadas
+- Decisión
+- Consecuencias
 
-*(Se agregarán evidencias en la sección siguiente)*
+### ADR-01 — Azure Functions vs App Service
+
+Se adopta Azure Functions para habilitar escalabilidad automática y modelo de costos basado en ejecución.
+
+[ADR-01 — Azure Functions vs App Service](./docs/adrs/adr-01-functions-vs-appservice.md)
+
+### ADR-02 — Cosmos DB vs Azure SQL
+
+Se selecciona Cosmos DB por su escalabilidad horizontal y flexibilidad en el modelo de datos.
+
+[ADR-02 — Cosmos DB vs Azure SQL](./docs/adrs/adr-02-cosmos-vs-sql.md)
+
+### ADR-03 — API Management vs exposición directa
+
+Se introduce API Management como gateway para centralizar seguridad, versionamiento y control de tráfico.
+
+[ADR-03 — API Management vs exposición directa](./docs/adrs/adr-03-apim-vs-direct.md)
+
+### ADR-04 — Blob Storage vs Azure Files
+
+Se utiliza Blob Storage por su eficiencia en almacenamiento de objetos y acceso vía HTTP.
+
+[ADR-04 — Blob Storage vs Azure Files](./docs/adrs/adr-04-blob-vs-files.md)
+
+### ADR-05 — Notification Hubs vs Communication Services
+
+Se selecciona Notification Hubs por su especialización en notificaciones push móviles.
+
+[ADR-05 — Notification Hubs vs Communication 
+Services](./docs/adrs/adr-05-notifications.md)
 
 ---
 
-## 📸 7. Evidencias de Implementación
+## Flujo Crítico del Sistema
 
-*(Pendiente de completar)*
+El flujo principal de procesamiento de pedidos se define de la siguiente manera:
 
-Se incluirán capturas de:
+1. El cliente realiza una solicitud de pedido a través de la aplicación móvil
+2. La solicitud es recibida por API Management, donde se aplican políticas de seguridad y control de tráfico
+3. Azure Functions procesa la solicitud (`registrarPedido`)
+4. El pedido es almacenado en Cosmos DB
+5. El estado del pedido es actualizado (`actualizarEstado`)
+6. Se envía una notificación push al cliente (`notificarCliente`)
 
-* Servicios desplegados en Azure
-* Logs de ejecución
-* Documentos en Cosmos DB
-* Notificaciones enviadas
-* Colección Postman
-
-📁 Ver detalle en: `/assets/README.md`
-
----
-
-## ⚙️ 8. Arquitectura Técnica (Implementación)
-
-El código fuente del proyecto sigue principios de **Clean Architecture**, separando responsabilidades en distintas capas.
-
-📁 Ver detalle en: `/src/README.md`
+Este flujo garantiza una operación desacoplada, escalable y resiliente.
 
 ---
 
-## 📂 9. Estructura del Repositorio
+## Evidencias de Implementación
+
+Se documentan evidencias del sistema desplegado:
+
+* Despliegue de recursos en Azure (Functions, Cosmos DB, API Management, Notification Hubs)
+* Ejecución de Azure Functions
+* Persistencia en Cosmos DB
+* Envío de notificaciones
+* Pruebas realizadas mediante Postman
+
+*(Ver carpeta `/assets` para capturas y evidencias)*
+
+---
+
+## Arquitectura Técnica
+
+La implementación sigue principios de **Clean Architecture**, separando claramente:
+
+* Dominio
+* Aplicación
+* Infraestructura
+* Exposición (Azure Functions)
+
+Detalles en: `/src/README.md`
+
+---
+
+## Estructura del Repositorio
 
 ```
 /
-├── README.md        # Documentación principal
-├── /src             # Código fuente
-├── /assets          # Diagramas y evidencias
+├── README.md
+├── /src
+│   └── README.md
+├── /assets
+├── /docs
+│   └── /adrs          # Architectural Decision Records
 ```
 
 ---
 
-## 👥 10. Integrantes
+## Estado
 
-* Nombre 1
-* Nombre 2
-* Nombre 3
-* Juan Antonio Mira Zapata
+Arquitectura diseñada e implementación en progreso, con evolución incremental mediante commits estructurados.
 
 ---
 
-## 📌 11. Conclusiones
+## Conclusión
 
-*(Pendiente)*
+La adopción de una arquitectura serverless permite a RapidGo:
 
-Se analizarán los beneficios obtenidos con la arquitectura serverless, incluyendo mejoras en escalabilidad, disponibilidad y costos.
+* Escalar dinámicamente según la demanda
+* Reducir costos operativos
+* Mejorar la experiencia del usuario
+* Aumentar la resiliencia del sistema
 
----
-
-## 🚀 Estado del Proyecto
-
-En desarrollo — construcción progresiva mediante commits documentados.
+Este enfoque permite a RapidGo evolucionar su plataforma hacia un modelo cloud-native, preparado para escalar de forma sostenible y soportar crecimiento continuo sin comprometer la estabilidad operativa.
