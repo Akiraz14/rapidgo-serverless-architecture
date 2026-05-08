@@ -4,30 +4,32 @@
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="0Wu0qBQqP7Mae5Jx9CDF-12" edge="1" parent="1" source="W5tj9KJUYqhRyNQG6c3f-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;strokeColor=light-dark(#000000,#808080);fontSize=15;dashed=1;dashPattern=8 8;" target="9B0mX2HJ76YxReeGUo9X-5" value="Recibe pedidos &lt;br&gt;y actualiza sus estados">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="0Wu0qBQqP7Mae5Jx9CDF-12" edge="1" parent="1" source="W5tj9KJUYqhRyNQG6c3f-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;strokeColor=light-dark(#000000,#FFFFFF);fontSize=16;dashed=1;dashPattern=8 8;" target="9B0mX2HJ76YxReeGUo9X-5" value="Recibe pedidos &lt;br&gt;y actualiza sus estados">
+          <mxGeometry relative="1" x="-0.0909" y="-4" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
         </mxCell>
-        <object placeholders="1" c4Name="Repartidor" c4Type="Person" c4Description="Encargado de recoger y entregar pedidos. Actualiza el estado en la app movil" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="W5tj9KJUYqhRyNQG6c3f-1">
+        <object placeholders="1" c4Name="Repartidor" c4Type="Person" c4Description="Encargado de recoger y entregar pedidos. Actualiza el estado en la app movil." label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="W5tj9KJUYqhRyNQG6c3f-1">
           <mxCell parent="1" style="html=1;fontSize=11;dashed=0;whiteSpace=wrap;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;shape=mxgraph.c4.person2;align=center;metaEdit=1;points=[[0.5,0,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0]];resizable=0;" vertex="1">
-            <mxGeometry height="180" width="200" x="516" y="30" as="geometry" />
+            <mxGeometry height="180" width="200" x="516" y="-30" as="geometry" />
           </mxCell>
         </object>
-        <object placeholders="1" c4Name="Administrador" c4Type="Person" c4Description="Personal interno que supervisa operaciones, monitorea pedidos y gestiona el sistema" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="W5tj9KJUYqhRyNQG6c3f-2">
+        <object placeholders="1" c4Name="Administrador" c4Type="Person" c4Description="Personal interno que supervisa operaciones, monitorea pedidos y gestiona el sistema." label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="W5tj9KJUYqhRyNQG6c3f-2">
           <mxCell parent="1" style="html=1;fontSize=11;dashed=0;whiteSpace=wrap;fillColor=#60a917;strokeColor=#2D7600;shape=mxgraph.c4.person2;align=center;metaEdit=1;points=[[0.5,0,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0]];resizable=0;fontColor=#ffffff;" vertex="1">
-            <mxGeometry height="180" width="200" x="960" y="30" as="geometry" />
+            <mxGeometry height="180" width="200" x="960" y="-30" as="geometry" />
           </mxCell>
         </object>
         <object placeholders="1" c4Name="Cliente" c4Type="Person" c4Description="Usuario final que realiza pedidos, consulta estados y recibe notificaciones desde la app móvil." label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="W5tj9KJUYqhRyNQG6c3f-3">
           <mxCell parent="1" style="html=1;fontSize=11;dashed=0;whiteSpace=wrap;fillColor=#008a00;strokeColor=#005700;fontColor=#ffffff;shape=mxgraph.c4.person2;align=center;metaEdit=1;points=[[0.5,0,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0]];resizable=0;" vertex="1">
-            <mxGeometry height="180" width="200" x="128" y="30" as="geometry" />
+            <mxGeometry height="180" width="200" x="128" y="-30" as="geometry" />
           </mxCell>
         </object>
-        <object placeholders="1" c4Name="FCM" c4Type="Firebase Cloud - Google" c4Description="Envía notificaciones push a dispositivos Android" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="e6ttd_D2kfCRhIhAaHpU-2">
+        <object placeholders="1" c4Name="FCM" c4Type="Firebase Cloud - Google" c4Description="Envía notificaciones push a dispositivos Android." label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="e6ttd_D2kfCRhIhAaHpU-2">
           <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#8C8496;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#736782;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1">
             <mxGeometry height="120" width="240" x="884" y="912" as="geometry" />
           </mxCell>
         </object>
-        <object placeholders="1" c4Name="Pasarela de pagos" c4Type="Sistema Externo" c4Description="Sistema externo que procesa los pagos y cobra la comisión del 18% por pedido completado." label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="e6ttd_D2kfCRhIhAaHpU-6">
+        <object placeholders="1" c4Name="Pasarela de pagos" c4Type="External System" c4Description="Sistema externo que procesa los pagos y cobra la comisión del 18% por pedido completado." label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="e6ttd_D2kfCRhIhAaHpU-6">
           <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#fa6800;fontColor=#000000;align=center;arcSize=10;strokeColor=#C73500;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1">
             <mxGeometry height="120" width="240" x="496" y="912" as="geometry" />
           </mxCell>
@@ -35,22 +37,23 @@
         <mxCell id="9B0mX2HJ76YxReeGUo9X-8" edge="1" parent="1" source="e6ttd_D2kfCRhIhAaHpU-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;fontSize=15;entryX=0.75;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;dashed=1;dashPattern=8 8;" target="9B0mX2HJ76YxReeGUo9X-1" value="Notificacion iOS">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <object placeholders="1" c4Name="RapidGo Serverless Backend  " c4Type="Microsoft Azure - Serverless" c4Description="Sistema que gestiona pedidos,actualiza estados y envia notificaciones en tiempo real." label="&lt;font&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/font&gt;&lt;/div&gt;" id="e6ttd_D2kfCRhIhAaHpU-17">
+        <object placeholders="1" c4Name="RapidGo Serverless Backend  " c4Type="Microsoft Azure - Serverless" c4Description="Sistema que gestiona pedidos, actualiza estados y envia notificaciones en tiempo real." label="&lt;font&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/font&gt;&lt;/div&gt;" id="e6ttd_D2kfCRhIhAaHpU-17">
           <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#a20025;align=center;arcSize=10;strokeColor=#6F0000;metaEdit=1;resizable=1;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];rotation=0;fixedWidth=0;fontSize=23;fontColor=#ffffff;" vertex="1">
             <mxGeometry height="216" width="470" x="381" y="564" as="geometry" />
           </mxCell>
         </object>
-        <mxCell id="0Wu0qBQqP7Mae5Jx9CDF-13" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.25;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;strokeColor=light-dark(#000000,#808080);fontSize=15;dashed=1;dashPattern=8 8;" target="9B0mX2HJ76YxReeGUo9X-5" value="Hacer pedidos &lt;br&gt;y consultar estados">
-          <mxGeometry relative="1" as="geometry">
+        <mxCell id="0Wu0qBQqP7Mae5Jx9CDF-13" edge="1" parent="1" source="W5tj9KJUYqhRyNQG6c3f-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.25;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;strokeColor=light-dark(#000000,#FFFFFF);fontSize=16;dashed=1;dashPattern=8 8;" target="9B0mX2HJ76YxReeGUo9X-5" value="Hacer pedidos &lt;br&gt;y consultar estados">
+          <mxGeometry relative="1" x="-0.0658" y="6" as="geometry">
+            <mxPoint as="offset" />
             <Array as="points">
-              <mxPoint x="228" y="294" />
-              <mxPoint x="556" y="294" />
+              <mxPoint x="228" y="288" />
+              <mxPoint x="556" y="288" />
             </Array>
             <mxPoint x="228" y="228" as="sourcePoint" />
             <mxPoint x="556.0000000000002" y="342" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <object placeholders="1" c4Name="APNs" c4Type="Apple Push Service" c4Description="Envía notificaciones push a dispositivos iOS" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="9B0mX2HJ76YxReeGUo9X-1">
+        <object placeholders="1" c4Name="APNs" c4Type="Apple Push Service" c4Description="Envía notificaciones push a dispositivos iOS." label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="9B0mX2HJ76YxReeGUo9X-1">
           <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#8C8496;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#736782;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1">
             <mxGeometry height="120" width="240" x="108" y="912" as="geometry" />
           </mxCell>
@@ -86,6 +89,11 @@
         <mxCell id="9B0mX2HJ76YxReeGUo9X-14" edge="1" parent="1" source="W5tj9KJUYqhRyNQG6c3f-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;fontSize=15;dashed=1;dashPattern=8 8;" target="e6ttd_D2kfCRhIhAaHpU-17" value="Consulta operaciones&amp;nbsp;&lt;br&gt;y monitorea el sistema">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
+        <object placeholders="1" c4Name="[System Context] Diagrama del Sistema – RapidGo" c4Type="ContainerScopeBoundary" c4Description="Este diagrama representa el contexto general del sistema RapidGo, mostrando los actores principales, los sistemas externos y las interacciones con el backend serverless implementado en Microsoft Azure." label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;&lt;div style=&quot;text-align: left&quot;&gt;%c4Name%&lt;/div&gt;&lt;/b&gt;&lt;/font&gt;&lt;div style=&quot;text-align: left&quot;&gt;%c4Description%&lt;/div&gt;" id="1V8QinZ6i2Cabm60RFct-1">
+          <mxCell parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;metaEdit=1;allowArrows=0;resizable=1;rotatable=0;connectable=0;recursiveResize=0;expand=0;pointerEvents=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1">
+            <mxGeometry height="60" width="564" x="48" y="1104" as="geometry" />
+          </mxCell>
+        </object>
       </root>
     </mxGraphModel>
   </diagram>
