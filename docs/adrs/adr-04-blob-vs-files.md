@@ -10,6 +10,8 @@ RapidGo requiere almacenar archivos asociados a pedidos, tales como:
 
 Estos archivos deben ser accesibles desde el backend, escalables y con un costo optimizado.
 
+RapidGo opera bajo una arquitectura serverless basada en Azure Functions y requiere almacenar imágenes y documentos asociados al flujo de pedidos.
+
 Los requerimientos clave incluyen:
 
 * Alta escalabilidad
@@ -25,7 +27,7 @@ Los requerimientos clave incluyen:
 **1. Azure Files**
 
 * Sistema de archivos compartido en la nube (SMB/NFS)
-* Similar a un file system tradicional
+* Proporciona un sistema de archivos compartido similar a un entorno tradicional
 
 **Ventajas:**
 
@@ -49,7 +51,7 @@ Los requerimientos clave incluyen:
 
 **Ventajas:**
 
-* Escalabilidad prácticamente ilimitada
+* Escalabilidad altamente elástica y preparada para grandes volúmenes de datos
 * Costos optimizados para almacenamiento masivo
 * Acceso directo vía HTTP/HTTPS
 * Integración nativa con Azure Functions
@@ -72,7 +74,9 @@ Esta decisión se fundamenta en:
 * La necesidad de almacenar archivos binarios de forma eficiente
 * La integración directa con servicios serverless como Azure Functions
 * La optimización de costos para almacenamiento a gran escala
-* La simplicidad en el acceso vía HTTP para clientes y servicios
+* La simplicidad en el acceso vía HTTP para clientes y servicios. Además, Azure Blob Storage corresponde al servicio recomendado en la arquitectura de referencia oficial del proyecto para el almacenamiento de imágenes y reportes operacionales
+
+Para minimizar costos durante la fase piloto se utilizará el tier [Standard LRS](../glossary.md)
 
 ---
 
@@ -89,7 +93,7 @@ Esta decisión se fundamenta en:
 
 * Mayor complejidad en la gestión de rutas y organización de archivos
 * No es adecuado para aplicaciones que requieren un sistema de archivos tradicional
-* Necesidad de manejar permisos y acceso mediante mecanismos adicionales (SAS tokens, RBAC)
+* El acceso seguro a los archivos deberá gestionarse mediante [SAS Tokens temporales](../glossary.md) y control de acceso basado en roles ([RBAC](../glossary.md))
 
 ---
 
