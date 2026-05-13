@@ -8,6 +8,8 @@ RapidGo requiere enviar notificaciones en tiempo real a dispositivos móviles (A
 * Pedido en camino
 * Pedido entregado
 
+RapidGo utiliza una arquitectura serverless basada en Azure Functions, por lo que el sistema de notificaciones debe integrarse eficientemente con eventos generados desde el backend y soportar escalabilidad automática
+
 El sistema debe garantizar:
 
 * Alta tasa de entrega de notificaciones (>95%)
@@ -22,7 +24,7 @@ El sistema debe garantizar:
 
 **1. Azure Communication Services (ACS)**
 
-* Plataforma de comunicación multicanal (SMS, email, voz, chat)
+* Plataforma de comunicación multicanal orientada a SMS, email, voz y chat en tiempo real
 * Permite enviar notificaciones a través de distintos canales
 
 **Ventajas:**
@@ -48,7 +50,7 @@ El sistema debe garantizar:
 **Ventajas:**
 
 * Optimizado específicamente para notificaciones push
-* Alta escalabilidad para envío masivo
+* Alta capacidad de escalabilidad para el envío masivo de notificaciones a dispositivos móviles
 * Integración directa con FCM y APNs
 * Bajo costo en comparación con soluciones multicanal
 * Soporte para segmentación de dispositivos
@@ -72,6 +74,8 @@ Esta decisión se basa en:
 * La capacidad de escalar a un alto volumen de dispositivos
 * La optimización de costos frente a soluciones más generales
 
+Además, Azure Notification Hubs corresponde al servicio recomendado en el stack oficial del proyecto para el manejo de notificaciones push hacia dispositivos Android e iOS.
+
 Azure Notification Hubs permitirá desacoplar la lógica de notificación del resto del sistema, garantizando una entrega eficiente y confiable.
 
 ---
@@ -88,7 +92,7 @@ Azure Notification Hubs permitirá desacoplar la lógica de notificación del re
 **Negativas / Trade-offs:**
 
 * Limitación a notificaciones push (no cubre otros canales como SMS o email)
-* Dependencia de servicios externos como Firebase y APNs
+* Dependencia de proveedores externos como Firebase Cloud Messaging (FCM) y Apple Push Notification Service (APNs) para la entrega final de mensajes
 * Posible necesidad de complementar con otros servicios en el futuro si se amplían los canales de comunicación
 
 ---
