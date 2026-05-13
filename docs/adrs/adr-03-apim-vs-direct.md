@@ -35,7 +35,7 @@ Además, el backend está basado en Azure Functions, que por defecto permite exp
 * Dificultad para implementar políticas de seguridad consistentes
 * Limitado control de versionamiento
 * Mayor exposición a ataques si no se gestionan correctamente los endpoints
-* Escalabilidad limitada en términos de gobernanza de API
+* Dificultad para administrar políticas consistentes, monitoreo y control de consumidores a medida que aumenta el número de APIs
 
 ---
 
@@ -46,7 +46,7 @@ Además, el backend está basado en Azure Functions, que por defecto permite exp
 
 **Ventajas:**
 
-* Centralización de autenticación (JWT, OAuth, etc.)
+* Centralización de validación y aplicación de políticas de autenticación/autorización (JWT, OAuth, etc.)
 * Implementación de rate limiting y protección ante abuso
 * Versionamiento de APIs sin impactar consumidores
 * Mayor control y visibilidad del tráfico
@@ -71,7 +71,7 @@ Esta decisión se fundamenta en:
 * La capacidad de gestionar versiones de la API sin afectar clientes existentes
 * La proyección de crecimiento del sistema hacia múltiples canales de consumo
 
-Azure API Management actuará como fachada del sistema, mientras que Azure Functions permanecerá desacoplado y protegido detrás del gateway.
+Las Azure Functions no serán consumidas directamente por clientes externos y su acceso quedará restringido únicamente a través de Azure API Management.
 
 ---
 
